@@ -317,41 +317,6 @@
       font-size: 1rem;
     }
 
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .stat-card {
-      background: rgba(201,168,76,0.05);
-      border: 1px solid rgba(201,168,76,0.15);
-      padding: 1.5rem;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-
-    .stat-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-3px);
-    }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--slate);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
     /* SKILLS */
     .skills-grid {
       display: grid;
@@ -381,10 +346,7 @@
     .skill-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
     .skill-card:hover::before { height: 100%; }
 
-    .skill-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+    .skill-icon { font-size: 1.8rem; margin-bottom: 1rem; }
 
     .skill-name {
       font-family: var(--font-display);
@@ -394,18 +356,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .skill-desc {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.75;
-    }
+    .skill-desc { font-size: 0.9rem; color: var(--slate); line-height: 1.75; }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
 
     .tag {
       font-family: var(--font-mono);
@@ -472,19 +425,9 @@
       line-height: 1.3;
     }
 
-    .project-desc {
-      font-size: 0.92rem;
-      color: var(--slate);
-      line-height: 1.85;
-      margin-bottom: 1.5rem;
-    }
+    .project-desc { font-size: 0.92rem; color: var(--slate); line-height: 1.85; margin-bottom: 1.5rem; }
 
-    .project-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
+    .project-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 
     .project-link {
       font-family: var(--font-mono);
@@ -504,18 +447,9 @@
     /* CONTACT */
     .contact-wrapper { max-width: 700px; }
 
-    .contact-intro {
-      font-size: 1.05rem;
-      color: var(--slate-light);
-      margin-bottom: 3rem;
-      line-height: 1.9;
-    }
+    .contact-intro { font-size: 1.05rem; color: var(--slate-light); margin-bottom: 3rem; line-height: 1.9; }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
 
     .contact-item {
       display: flex;
@@ -566,12 +500,7 @@
       z-index: 1;
     }
 
-    .footer-text {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--slate);
-      letter-spacing: 0.05em;
-    }
+    .footer-text { font-family: var(--font-mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.05em; }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -579,16 +508,8 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -600,48 +521,21 @@
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
-    /* ===== Compact Skills + Projects ===== */
 
-  /* Reduce vertical space of only these sections */
-  #skills, #projects {
-    padding: 4rem 4rem; /* default section padding was 6rem 4rem */
+    /* Compact Skills + Projects */
+    #skills, #projects { padding: 4rem 4rem; }
+    #skills .divider, #projects .divider { margin-bottom: 2rem; }
+    #skills .skills-grid, #projects .projects-grid { gap: 1rem; }
+    #skills .skill-card, #projects .project-card { padding: 1.0rem; }
+    #skills .skill-name { font-size: 1.05rem; }
+    #skills .skill-desc { font-size: 0.85rem; line-height: 1.6; }
+    #projects .project-title { font-size: 1.15rem; }
+    #projects .project-desc { font-size: 0.86rem; line-height: 1.7; }
+    #skills .tag, #projects .tag { font-size: 0.64rem; padding: 0.18rem 0.5rem; }
+
+    @media (max-width: 768px) {
+      #skills, #projects { padding: 3rem 1.5rem; }
     }
-  
-  /* Reduce spacing under divider inside these sections */
-  #skills .divider, #projects .divider {
-    margin-bottom: 2rem; /* was 3rem */
-    }
-
-/* Tighten grid spacing */
-  #skills .skills-grid,
-  #projects .projects-grid {
-    gap: 1rem; /* was 1.5rem */
-    }
-
-/* Smaller cards */
-  #skills .skill-card,
-  #projects .project-card {
-    padding: 1.0rem; /* was 2rem */
-    }
-
-/* Smaller text in skills */
-  #skills .skill-name { font-size: 1.05rem; } /* was 1.15rem */
-  #skills .skill-desc { font-size: 0.85rem; line-height: 1.6; } /* was 0.9 / 1.75 */
-
-/* Smaller text in projects */
-  #projects .project-title { font-size: 1.15rem; } /* was 1.3rem */
-  #projects .project-desc { font-size: 0.86rem; line-height: 1.7; } /* was 0.92 / 1.85 */
-
-/* Make tags a bit smaller */
-  #skills .tag, #projects .tag {
-    font-size: 0.64rem;     /* was 0.68rem */
-    padding: 0.18rem 0.5rem; /* was 0.2rem 0.6rem */
-    }
-
-/* Mobile: keep compact */
-  @media (max-width: 768px) {
-  #skills, #projects { padding: 3rem 1.5rem; }
-  }
   </style>
 </head>
 
@@ -663,23 +557,18 @@
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-
     <div class="hero-content">
       <div class="hero-label">Portfolio</div>
-
       <h1><span>Adegbola Ayeni</span></h1>
-
-      <p class="hero-stack">Economic Research & Data Analyst</p>
-
+      <p class="hero-stack">Economic Research &amp; Data Analyst</p>
       <p class="hero-tagline">
         Delivering decision-ready insights through SQL investigation,
         Power BI dashboards and applied econometric modeling.
       </p>
-
       <div class="hero-actions">
-        <!-- Put your resume file here: /assets/AA Resume.pdf -->
-        <a href="assests/AA Resume.pdf" class="btn-primary" download>Download Resume</a>
+        <a href="assets/AA-Resume.pdf" class="btn-primary" download>Download Resume</a>
         <a href="#projects" class="btn-outline">View Projects</a>
+      </div>
     </div>
   </section>
 
@@ -690,23 +579,11 @@
         <div class="section-label">About Me</div>
         <h2>Economist. Analyst.</h2>
         <div class="divider"></div>
-
-        <p>
-          I am a trained research and data analyst specializing in quantitative research, SQL-based investigations,
-          dashboard development, and applied econometric modeling.
-        </p>
-        <p>
-          My work focuses on solving practical problems — from identifying operational inefficiencies in structured datasets
-          to estimating long-run macroeconomic relationships.
-        </p>
-        <p>
-          I build structured analytical workflows that transform raw data into strategic insights for policy, finance,
-          and business decision-making.
-        </p>
-
+        <p>I am a trained research and data analyst specializing in quantitative research, SQL-based investigations, dashboard development, and applied econometric modeling.</p>
+        <p>My work focuses on solving practical problems — from identifying operational inefficiencies in structured datasets to estimating long-run macroeconomic relationships.</p>
+        <p>I build structured analytical workflows that transform raw data into strategic insights for policy, finance, and business decision-making.</p>
         <br/>
         <a href="#projects" class="btn-primary">Explore My Work</a>
-      </div>
       </div>
     </div>
   </section>
@@ -714,66 +591,46 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-label">Expertise</div>
-    <h2>Skills & Tools</h2>
+    <h2>Skills &amp; Tools</h2>
     <div class="divider"></div>
-
     <div class="skills-grid">
+
       <div class="skill-card reveal">
         <div class="skill-icon">🗄️</div>
         <div class="skill-name">SQL</div>
-        <div class="skill-desc">
-          Complex querying, CTE-based investigation, aggregation, and window-function analysis for relational datasets and reporting.
-        </div>
+        <div class="skill-desc">Complex querying, CTE-based investigation, aggregation, and window-function analysis for relational datasets and reporting.</div>
         <div class="skill-tags">
-          <span class="tag">SQLite</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">CTEs</span>
-          <span class="tag">Window Functions</span>
+          <span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">CTEs</span><span class="tag">Window Functions</span>
         </div>
       </div>
 
       <div class="skill-card reveal">
         <div class="skill-icon">📊</div>
         <div class="skill-name">Power BI</div>
-        <div class="skill-desc">
-          KPI dashboards, data modeling, and DAX measures that translate raw data into executive-ready insight and interactivity.
-        </div>
+        <div class="skill-desc">KPI dashboards, data modeling, and DAX measures that translate raw data into executive-ready insight and interactivity.</div>
         <div class="skill-tags">
-          <span class="tag">DAX</span>
-          <span class="tag">Power Query</span>
-          <span class="tag">Data Modeling</span>
-          <span class="tag">KPI Dashboards</span>
+          <span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span><span class="tag">KPI Dashboards</span>
         </div>
       </div>
 
       <div class="skill-card reveal">
         <div class="skill-icon">📑</div>
         <div class="skill-name">Excel</div>
-        <div class="skill-desc">
-          Advanced cleaning, pivot analysis, and structured reporting.
-        </div>
+        <div class="skill-desc">Advanced cleaning, pivot analysis, and structured reporting.</div>
         <div class="skill-tags">
-          <span class="tag">Pivot Tables</span>
-          <span class="tag">XLOOKUP</span>
-          <span class="tag">Power Query</span>
-          <span class="tag">Charts</span>
+          <span class="tag">Pivot Tables</span><span class="tag">XLOOKUP</span><span class="tag">Power Query</span><span class="tag">Charts</span>
         </div>
       </div>
 
       <div class="skill-card reveal">
         <div class="skill-icon">📈</div>
         <div class="skill-name">Economic Research</div>
-        <div class="skill-desc">
-          Applied econometrics, time-series modeling, and policy evaluation focused on decision relevance and interpretability.
-        </div>
+        <div class="skill-desc">Applied econometrics, time-series modeling, and policy evaluation focused on decision relevance and interpretability.</div>
         <div class="skill-tags">
-          <span class="tag">Econometrics</span>
-          <span class="tag">ARDL</span>
-          <span class="tag">Stationarity</span>
-          <span class="tag">Policy Analysis</span>
+          <span class="tag">Econometrics</span><span class="tag">ARDL</span><span class="tag">Stationarity</span><span class="tag">Policy Analysis</span>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -782,26 +639,18 @@
     <div class="section-label">Work</div>
     <h2>Featured Projects</h2>
     <div class="divider"></div>
-
     <div class="projects-grid">
 
       <div class="project-card reveal">
         <div class="project-number">01 / PROJECT</div>
         <div class="project-title">Vehicle Crime Analytics — SQL Investigation</div>
         <div class="project-desc">
-          Conducted an end-to-end SQL investigation on vehicle crime reports to identify frequency trends, geographic clustering,
-          case resolution patterns, and investigator workload distribution.
-          <br><br>
-          Applied joins, CTEs, aggregations, and window functions to uncover operational bottlenecks and repeat-location crime clusters.
-          <br><br>
+          Conducted an end-to-end SQL investigation on vehicle crime reports to identify frequency trends, geographic clustering, case resolution patterns, and investigator workload distribution.<br><br>
+          Applied joins, CTEs, aggregations, and window functions to uncover operational bottlenecks and repeat-location crime clusters.<br><br>
           Delivered structured insights that support targeted enforcement and reporting efficiency improvements.
         </div>
         <div class="project-tools">
-          <span class="tag">SQL</span>
-          <span class="tag">CTEs</span>
-          <span class="tag">Window Functions</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Investigation</span>
+          <span class="tag">SQL</span><span class="tag">CTEs</span><span class="tag">Window Functions</span><span class="tag">SQLite</span><span class="tag">Investigation</span>
         </div>
         <a href="https://github.com/adegbolaayeni/Crime-Reports" target="_blank" class="project-link">View Repository</a>
       </div>
@@ -810,40 +659,26 @@
         <div class="project-number">02 / PROJECT</div>
         <div class="project-title">BMW Car Sales Intelligence Dashboard</div>
         <div class="project-desc">
-          Designed an interactive Power BI dashboard analyzing regional sales performance, product segmentation, revenue distribution,
-          and manufacturing trends.
-          <br><br>
-          Built a structured data model using Power Query and DAX measures to generate KPI-driven insights for strategic comparison.
-          <br><br>
+          Designed an interactive Power BI dashboard analyzing regional sales performance, product segmentation, revenue distribution, and manufacturing trends.<br><br>
+          Built a structured data model using Power Query and DAX measures to generate KPI-driven insights for strategic comparison.<br><br>
           Enabled performance benchmarking and data-driven sales optimization.
         </div>
         <div class="project-tools">
-          <span class="tag">Power BI</span>
-          <span class="tag">DAX</span>
-          <span class="tag">Power Query</span>
-          <span class="tag">Data Modeling</span>
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span>
         </div>
         <a href="https://github.com/adegbolaayeni/BMW-Car-Sales-Report" target="_blank" class="project-link">View Repository</a>
       </div>
 
       <div class="project-card reveal">
         <div class="project-number">03 / PROJECT</div>
-        <div class="project-title">Economic Hardship & Diaspora Education — ARDL Study</div>
+        <div class="project-title">Economic Hardship &amp; Diaspora Education — ARDL Study</div>
         <div class="project-desc">
-          Applied ARDL time-series modeling to examine short-run and long-run macroeconomic effects on Nigerian students’ access
-          to higher education in the United States.
-          <br><br>
-          Conducted ADF stationarity testing and lag selection to estimate relationships between exchange rates, inflation, remittances,
-          and tuition costs.
-          <br><br>
+          Applied ARDL time-series modeling to examine short-run and long-run macroeconomic effects on Nigerian students' access to higher education in the United States.<br><br>
+          Conducted ADF stationarity testing and lag selection to estimate relationships between exchange rates, inflation, remittances, and tuition costs.<br><br>
           Produced policy-relevant findings highlighting macroeconomic sensitivity in diaspora enrollment patterns.
         </div>
         <div class="project-tools">
-          <span class="tag">ARDL</span>
-          <span class="tag">EViews</span>
-          <span class="tag">ADF Test</span>
-          <span class="tag">Time Series</span>
-          <span class="tag">Policy Research</span>
+          <span class="tag">ARDL</span><span class="tag">EViews</span><span class="tag">ADF Test</span><span class="tag">Time Series</span><span class="tag">Policy Research</span>
         </div>
         <a href="https://github.com/adegbolaayeni/Economic-Hardship-and-its-Implications-on-Education-in-the-Diaspora-USA-" target="_blank" class="project-link">View Repository</a>
       </div>
@@ -855,15 +690,14 @@
   <section id="contact">
     <div class="contact-wrapper">
       <div class="section-label">Contact</div>
-      <h2>Let’s Connect</h2>
+      <h2>Let's Connect</h2>
       <div class="divider"></div>
-
       <p class="contact-intro reveal">
         Open to data analyst roles, research collaborations, internships, and economic research.
-        Let’s build solutions driven by structured data and evidence.
+        Let's build solutions driven by structured data and evidence.
       </p>
-
       <div class="contact-links reveal">
+
         <a href="https://github.com/adegbolaayeni" target="_blank" class="contact-item">
           <div class="contact-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -876,12 +710,23 @@
           </div>
         </a>
 
-        <!-- FIXED mailto -->
         <a href="mailto:ayeniadegbolaelijah@gmail.com" class="contact-item">
           <div class="contact-icon" aria-hidden="true">✉</div>
           <div>
             <span class="contact-text-label">Email</span>
             <span class="contact-text-value">ayeniadegbolaelijah@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/adegbolaayenii/" target="_blank" class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-text-label">LinkedIn</span>
+            <span class="contact-text-value">linkedin.com/in/adegbolaayenii</span>
           </div>
         </a>
 
@@ -891,12 +736,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-text" id="footerYear">© 2026 Adegbola Ayeni. All rights reserved.</div>
-    <div class="footer-text">Economic Research & Data Analyst</div>
+    <div class="footer-text" id="footerYear">© 2025 Adegbola Ayeni. All rights reserved.</div>
+    <div class="footer-text">Economic Research &amp; Data Analyst</div>
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -907,12 +751,10 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // Nav shrink (responsive-safe via class)
     window.addEventListener('scroll', () => {
       document.body.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Footer year auto-update
     const fy = document.getElementById('footerYear');
     if (fy) fy.textContent = `© ${new Date().getFullYear()} Adegbola Ayeni. All rights reserved.`;
   </script>
