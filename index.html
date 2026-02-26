@@ -107,8 +107,13 @@
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      flex-direction:row;
+      flex-wrap:nowrap;
+      gap: 1.5rem;
       list-style: none;
+      padding: 0;
+      margin: 0;
+      
     }
 
     .nav-links a {
@@ -554,16 +559,16 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo" aria-label="Adegbola Ayeni Home">
+<a href="#hero" class="nav-logo" aria-label="Adegbola Ayeni Home">
   <img src="assests/logo.png" alt="Adegbola Ayeni logo" height="100" class="nav-logo-img">
 </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<ul class="nav-links">
+  <li><a href="#about">About</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
   <!-- HERO -->
   <section id="hero">
