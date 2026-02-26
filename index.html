@@ -87,12 +87,22 @@
     body.scrolled nav { padding: 1rem 4rem; }
 
     .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 0.02em;
-      text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 34px;      /* adjust: 28–40px */
+  width: auto;
+  display: block;
+}
+
+/* Optional: slightly smaller on mobile */
+@media (max-width: 768px) {
+  .nav-logo-img { height: 30px; }
+}
     }
 
     .nav-links {
@@ -544,7 +554,9 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">AA</a>
+    <a href="#hero" class="nav-logo" aria-label="Adegbola Ayeni Home">
+  <img src="assests/logo.svg" alt="Adegbola Ayeni logo" class="nav-logo-img">
+</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
