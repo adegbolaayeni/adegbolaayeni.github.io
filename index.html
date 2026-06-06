@@ -5,617 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Adegbola Ayeni is an Economic Research and Data Analyst specializing in econometrics, Power BI, and policy-focused analytics in Nigeria.">
   <title>Adegbola Ayeni | Economic Research & Data Analyst</title>
-
   <link rel="icon" type="image/png" sizes="32x32" href="assests/favicon.png">
   <link rel="apple-touch-icon" href="assests/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      /* Updated palette to match your logo background */
-      --navy: #d9d9d9;         /* page background */
-      --navy-mid: #e6e6e6;     /* section background */
+      --navy: #d9d9d9;
+      --navy-mid: #e6e6e6;
       --navy-light: #f2f2f2;
-
-      --white: #1b2430;        /* primary text */
-      --off-white: #232b36;    /* body text */
-      --slate-light: #3a4250;  /* muted */
-      --slate: #5a6473;        /* more muted */
-
+      --white: #1b2430;
+      --off-white: #232b36;
+      --slate-light: #3a4250;
+      --slate: #5a6473;
       --gold: #c9a84c;
       --gold-light: #e2c97e;
-
       --surface: rgba(255,255,255,0.55);
       --surface-strong: rgba(255,255,255,0.75);
       --border: rgba(0,0,0,0.10);
-
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'DM Sans', sans-serif;
       --font-mono: 'DM Mono', monospace;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--navy);
-      color: var(--off-white);
-      font-family: var(--font-body);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ACCESSIBILITY */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 10px;
-      background: var(--gold);
-      color: #111;
-      padding: 0.6rem 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      z-index: 999;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+    body { background-color: var(--navy); color: var(--off-white); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .skip-link { position: absolute; left: -999px; top: 10px; background: var(--gold); color: #111; padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; z-index: 999; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
     .skip-link:focus { left: 10px; }
-
-    /* NOISE TEXTURE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.18; /* reduced for light background */
-    }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.18; }
 
     /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.1rem 4rem;
-      background: rgba(217,217,217,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      transition: padding 0.25s ease;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 4rem; background: rgba(217,217,217,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.08); transition: padding 0.25s ease; }
     body.scrolled nav { padding: 0.85rem 4rem; }
-
-    .nav-logo {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-logo-img {
-      height: 44px; /* clean + compact */
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo-img { height: 44px; width: auto; display: block; object-fit: contain; }
+    .nav-links { display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
     .nav-links li { list-style: none; }
-
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--slate-light);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 1px;
-      background: var(--gold);
-      transition: width 0.3s;
-    }
-
+    .nav-links a { font-family: var(--font-mono); font-size: 0.78rem; color: var(--slate-light); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { width: 100%; }
-    .nav-links {
-      flex-wrap: nowrap;
-    }
 
     /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+    .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.10) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; opacity: 0.35; }
+    .hero-glow { position: absolute; top: -10%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%); pointer-events: none; opacity: 0.55; }
+    .hero-content { max-width: 980px; position: relative; z-index: 1; animation: fadeUp 0.9s ease both; }
+    .hero-label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .hero-label::before { content: ''; display: inline-block; width: 40px; height: 1px; background: var(--gold); }
+    h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.6rem); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 0.9rem; }
+    .hero-stack { font-family: var(--font-mono); font-size: 0.78rem; color: var(--slate-light); letter-spacing: 0.15em; margin-bottom: 1.2rem; text-transform: uppercase; }
+    .hero-tagline { font-size: 1.08rem; color: var(--slate-light); max-width: 720px; margin-bottom: 2.2rem; line-height: 1.85; }
+    .hero-actions { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+    .hero-metrics { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .metric { display: flex; flex-direction: column; }
+    .metric-number { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold); font-weight: 700; }
+    .metric-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); }
 
-    .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,168,76,0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.10) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      opacity: 0.35;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: -10%; right: -5%;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
-      pointer-events: none;
-      opacity: 0.55;
-    }
-
-    .hero-content {
-      max-width: 980px;
-      position: relative;
-      z-index: 1;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    .hero-label {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--gold);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-label::before {
-      content: '';
-      display: inline-block;
-      width: 40px; height: 1px;
-      background: var(--gold);
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-stack {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--slate-light);
-      letter-spacing: 0.15em;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    .hero-tagline {
-      font-size: 1.08rem;
-      color: var(--slate-light);
-      max-width: 720px;
-      margin-bottom: 2.2rem;
-      line-height: 1.85;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1.1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      padding: 0.85rem 2rem;
-      background: var(--gold);
-      color: #111;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    .btn-primary { padding: 0.85rem 2rem; background: var(--gold); color: #111; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; display: inline-flex; align-items: center; justify-content: center; }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline { padding: 0.85rem 2rem; background: transparent; color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(0,0,0,0.18); cursor: pointer; transition: border-color 0.2s, color 0.2s, transform 0.2s, background 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-outline:hover { border-color: var(--gold); color: #111; transform: translateY(-2px); background: rgba(201,168,76,0.18); }
 
-    .btn-outline {
-      padding: 0.85rem 2rem;
-      background: transparent;
-      color: var(--white);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid rgba(0,0,0,0.18);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: #111;
-      transform: translateY(-2px);
-      background: rgba(201,168,76,0.18);
-    }
-
-    .hero-metrics {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .metric {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .metric-number {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      color: var(--gold);
-      font-weight: 700;
-    }
-    
-    .metric-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate);
-    }
-    /* SECTION SHARED */
-    section {
-      padding: 6rem 4rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--gold);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 30px; height: 1px;
-      background: var(--gold);
-    }
-
-    h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.6vw, 2.8rem);
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .divider {
-      width: 60px; height: 2px;
-      background: var(--gold);
-      margin-bottom: 2.4rem;
-    }
+    /* SECTIONS */
+    section { padding: 6rem 4rem; position: relative; z-index: 1; }
+    .section-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 1rem; }
+    .section-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.8rem); font-weight: 600; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+    .divider { width: 60px; height: 2px; background: var(--gold); margin-bottom: 2.4rem; }
 
     /* ABOUT */
-    #about {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: start;
-      max-width: 1100px;
-    }
-
-    .about-text p {
-      color: var(--slate-light);
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-    }
+    #about { background: var(--navy-mid); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; max-width: 1100px; }
+    .about-text p { color: var(--slate-light); margin-bottom: 1.2rem; font-size: 1rem; }
 
     /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      max-width: 1100px;
-    }
-
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.15rem;
-      transition: border-color 0.3s, transform 0.3s, background 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 0;
-      background: var(--gold);
-      transition: height 0.4s;
-    }
-
-    .skill-card:hover {
-      border-color: rgba(201,168,76,0.45);
-      transform: translateY(-3px);
-      background: var(--surface-strong);
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; max-width: 1100px; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 1.15rem; transition: border-color 0.3s, transform 0.3s, background 0.3s; position: relative; overflow: hidden; }
+    .skill-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.4s; }
+    .skill-card:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-3px); background: var(--surface-strong); }
     .skill-card:hover::before { height: 100%; }
-
-    .skill-icon { font-size: 1.55rem; margin-bottom: 0.8rem; }
-    .skill-name {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-    }
-    .skill-desc { font-size: 0.86rem; color: var(--slate); line-height: 1.6; }
-
+    .skill-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.35rem; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem; }
-
-    .tag {
-      font-family: var(--font-mono);
-      font-size: 0.64rem;
-      color: #111;
-      background: rgba(201,168,76,0.20);
-      border: 1px solid rgba(201,168,76,0.35);
-      padding: 0.18rem 0.5rem;
-      letter-spacing: 0.05em;
-    }
+    .tag { font-family: var(--font-mono); font-size: 0.64rem; color: #111; background: rgba(201,168,76,0.20); border: 1px solid rgba(201,168,76,0.35); padding: 0.18rem 0.5rem; letter-spacing: 0.05em; }
 
     /* PROJECTS */
-    #projects {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
+    #projects { background: var(--navy-mid); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1rem;
-      max-width: 1100px;
-    }
+    .project-categories { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1100px; }
 
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.15rem;
-      transition: border-color 0.3s, transform 0.3s, background 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
+    .category-card { background: var(--surface); border: 1px solid var(--border); padding: 3rem 2.5rem; text-decoration: none; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.3s, transform 0.3s, background 0.3s; position: relative; overflow: hidden; }
+    .category-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .category-card:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-5px); background: var(--surface-strong); }
+    .category-card:hover::after { transform: scaleX(1); }
 
-    .project-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(201,168,76,0.45);
-      transform: translateY(-3px);
-      background: var(--surface-strong);
-    }
-    .project-card:hover::after { transform: scaleX(1); }
-
-    .project-card {
-      position: relative;
-    }
-    
-    .project-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(201,168,76,0.08), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-    
-    .project-card:hover::before {
-      opacity: 1;
-    }
-    .project-number {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.7rem;
-      opacity: 0.9;
-    }
-
-    .project-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.6rem;
-      line-height: 1.3;
-    }
-
-    .project-desc {
-      font-size: 0.86rem;
-      color: var(--slate);
-      line-height: 1.7;
-      margin-bottom: 1.1rem;
-    }
-
-    .project-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-
-    .project-link {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: #111;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s, opacity 0.2s;
-      background: rgba(201,168,76,0.22);
-      border: 1px solid rgba(201,168,76,0.35);
-      padding: 0.35rem 0.6rem;
-    }
-
-    .project-link:hover { gap: 0.7rem; opacity: 0.95; }
-    .project-link::after { content: '→'; }
+    .category-icon { font-size: 2.5rem; }
+    .category-count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; }
+    .category-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--white); line-height: 1.2; }
+    .category-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.75; }
+    .category-project-count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.08em; }
+    .category-arrow { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; margin-top: auto; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+    .category-card:hover .category-arrow { gap: 0.9rem; }
+    .category-arrow::after { content: '→'; }
 
     /* CONTACT */
     .contact-wrapper { max-width: 700px; }
-
     .contact-intro { font-size: 1.02rem; color: var(--slate-light); margin-bottom: 2.2rem; line-height: 1.9; }
-
     .contact-links { display: flex; flex-direction: column; gap: 0.9rem; }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      padding: 1rem 1.1rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      text-decoration: none;
-      transition: border-color 0.3s, background 0.3s, transform 0.2s;
-    }
-
-    .contact-item:hover {
-      border-color: rgba(201,168,76,0.45);
-      background: var(--surface-strong);
-      transform: translateY(-2px);
-    }
-
-    .contact-icon {
-      width: 40px; height: 40px;
-      border: 1px solid rgba(201,168,76,0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #111;
-      font-size: 1rem;
-      flex-shrink: 0;
-      background: rgba(201,168,76,0.18);
-    }
-
-    .contact-text-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--slate);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-
+    .contact-item { display: flex; align-items: center; gap: 1.2rem; padding: 1rem 1.1rem; border: 1px solid var(--border); background: var(--surface); text-decoration: none; transition: border-color 0.3s, background 0.3s, transform 0.2s; }
+    .contact-item:hover { border-color: rgba(201,168,76,0.45); background: var(--surface-strong); transform: translateY(-2px); }
+    .contact-icon { width: 40px; height: 40px; border: 1px solid rgba(201,168,76,0.45); display: flex; align-items: center; justify-content: center; color: #111; font-size: 1rem; flex-shrink: 0; background: rgba(201,168,76,0.18); }
+    .contact-text-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--slate); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
     .contact-text-value { font-size: 0.95rem; color: var(--white); }
 
     /* FOOTER */
-    footer {
-      padding: 1.8rem 4rem;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
+    footer { padding: 1.8rem 4rem; border-top: 1px solid rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
     .footer-text { font-family: var(--font-mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.05em; }
 
     /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* RESPONSIVE */
+    /* MOBILE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.2rem; }
       body.scrolled nav { padding: 0.85rem 1.2rem; }
       .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.65rem; }
+      .nav-logo-img { height: 40px; }
       section { padding: 4rem 1.2rem; }
       #hero { padding: 7rem 1.2rem 3rem; }
+      .project-categories { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.8rem; text-align: center; }
-      .nav-logo-img { height: 40px; }
     }
   </style>
 </head>
-
 <body>
   <a class="skip-link" href="#hero">Skip to content</a>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo" aria-label="Adegbola Ayeni Home">
-      <!-- Put your logo file here: /assets/logo.png -->
       <img src="assests/logo.png" alt="Adegbola Ayeni logo" class="nav-logo-img">
     </a>
-
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -624,158 +156,80 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-
     <div class="hero-content">
       <div class="hero-label">Portfolio</div>
-    
       <h1>Adegbola Ayeni</h1>
-    
-      <p class="hero-stack">
-        Economic Research | Data Analyst
-      </p>
-    
-      <p class="hero-tagline">
-        Transforming complex data into actionable insights through analytics, visualization, and evidence-based research.
-      </p>
-    
+      <p class="hero-stack">Economic Research | Data Analyst</p>
+      <p class="hero-tagline">Transforming complex data into actionable insights through analytics, visualization, and evidence-based research.</p>
       <div class="hero-metrics">
-        <div class="metric">
-          <span class="metric-number">8+</span>
-          <span class="metric-label">Projects</span>
-        </div>
-    
-        <div class="metric">
-          <span class="metric-number">4+</span>
-          <span class="metric-label">Tools</span>
-        </div>
-    
-        <div class="metric">
-          <span class="metric-number">3</span>
-          <span class="metric-label">Research Areas</span>
-        </div>
+        <div class="metric"><span class="metric-number">8+</span><span class="metric-label">Projects</span></div>
+        <div class="metric"><span class="metric-number">4+</span><span class="metric-label">Tools</span></div>
+        <div class="metric"><span class="metric-number">3</span><span class="metric-label">Research Areas</span></div>
       </div>
-    
       <div class="hero-actions">
-        <a href="assests/Adegbola Ayeni.pdf" class="btn-primary" download>
-          Download Resume
-        </a>
-    
-        <a href="#projects" class="btn-outline">
-          View Projects
-        </a>
+        <a href="assests/Adegbola Ayeni.pdf" class="btn-primary" download>Download Resume</a>
+        <a href="#projects" class="btn-outline">View Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-label">About Me</div>
         <h2>Economist. Analyst.</h2>
         <div class="divider"></div>
-
-        <p>
-          I’m a data analyst and research-driven problem solver passionate about transforming data into meaningful insights and visual stories.
-        </p>
-        
-        <p>
-          My work spans economic research, statistical analysis, data visualization, and policy-focused projects across business, education, and development sectors.
-        </p>
-        
-        <p>
-          Using tools like Excel, EViews, and Power BI, I enjoy uncovering patterns, building clear visualizations, and turning complex data into actionable insights.
-        </p>
-
+        <p>I'm a data analyst and research-driven problem solver passionate about transforming data into meaningful insights and visual stories.</p>
+        <p>My work spans economic research, statistical analysis, data visualization, and policy-focused projects across business, education, and development sectors.</p>
+        <p>Using tools like Excel, EViews, and Power BI, I enjoy uncovering patterns, building clear visualizations, and turning complex data into actionable insights.</p>
         <br/>
         <a href="#projects" class="btn-primary">Explore My Works</a>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-label">Expertise</div>
     <h2>Skills &amp; Tools</h2>
     <div class="divider"></div>
-  <div class="skills-grid">
-
-  <div class="skill-card reveal">
-    <div class="skill-name">Tools & Software</div>
-
-    <div class="skill-tags">
-      <span class="tag">Excel</span>
-      <span class="tag">EViews</span>
-      <span class="tag">Power BI</span>
-      <span class="tag">Python</span>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-name">Tools &amp; Software</div>
+        <div class="skill-tags">
+          <span class="tag">Excel</span><span class="tag">EViews</span><span class="tag">Power BI</span><span class="tag">Python</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-name">Data Analysis &amp; Statistical Methods</div>
+        <div class="skill-tags">
+          <span class="tag">Descriptive Statistics</span><span class="tag">Hypothesis Testing</span><span class="tag">Regression Analysis</span><span class="tag">Time Series Analysis</span><span class="tag">Data Interpretation</span><span class="tag">Exploratory Data Analysis</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-name">Econometrics &amp; Research</div>
+        <div class="skill-tags">
+          <span class="tag">ARDL Modeling</span><span class="tag">OLS Regression</span><span class="tag">ADF Unit Root Test</span><span class="tag">Cointegration Analysis</span><span class="tag">Model Diagnostics</span><span class="tag">Survey Research</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-name">Data Visualization</div>
+        <div class="skill-tags">
+          <span class="tag">Power BI</span><span class="tag">Dashboard Design</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Storytelling</span><span class="tag">KPI Reporting</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-name">Data Analysis & Statistical Methods</div>
-
-    <div class="skill-tags">
-      <span class="tag">Descriptive Statistics</span>
-      <span class="tag">Hypothesis Testing</span>
-      <span class="tag">Regression Analysis</span>
-      <span class="tag">Time Series Analysis</span>
-      <span class="tag">Data Interpretation</span>
-      <span class="tag">Exploratory Data Analysis</span>
-    </div>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-name">Econometrics & Research</div>
-
-    <div class="skill-tags">
-      <span class="tag">ARDL Modeling</span>
-      <span class="tag">OLS Regression</span>
-      <span class="tag">ADF Unit Root Test</span>
-      <span class="tag">Cointegration Analysis</span>
-      <span class="tag">Model Diagnostics</span>
-      <span class="tag">Survey Research</span>
-    </div>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-name">Data Visualization</div>
-
-    <div class="skill-tags">
-      <span class="tag">Power BI</span>
-      <span class="tag">Dashboard Design</span>
-      <span class="tag">DAX</span>
-      <span class="tag">Power Query</span>
-      <span class="tag">Data Storytelling</span>
-      <span class="tag">KPI Reporting</span>
-    </div>
-  </div>
-
-  <!--<div class="skill-card reveal">
-    <div class="skill-name">Programming & Database Tools</div>
-
-    <div class="skill-tags">
-      <!<span class="tag">SQL</span>
-      <span class="tag">SQLite</span>
-      <span class="tag">Python</span>
-      <span class="tag">Pandas</span>
-      <span class="tag">Matplotlib</span>
-      <span class="tag">Data Cleaning</span>
-    </div>
-  </div>-->
-</div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-label">Work</div>
     <h2>Featured Projects</h2>
     <div class="divider"></div>
+    <div class="project-categories">
 
- <a href="research.html" class="category-card reveal">
+      <a href="research.html" class="category-card reveal">
         <div class="category-title">Research</div>
         <div class="category-desc">Econometric studies, policy analysis, and academic research grounded in quantitative methodology and time-series modeling.</div>
         <div class="category-project-count">3 Projects</div>
@@ -791,161 +245,39 @@
 
     </div>
   </section>
-    
-    <!--<div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-title">Gender Inequality in Education &amp; Economic Development</div>
-        <div class="project-desc">
-          This project analyzes how gender inequality in education affects Nigeria’s economic development using 43 years of data (1981–2024).<br><br>
-          Using an ARDL econometric model, the study finds that while improving gender parity in education is essential for long-term growth, it has a negative short-term impact on GDP. This is not because gender equality is harmful—but because education is an investment that takes time to yield economic returns.<br><br>
-          The analysis also reveals a deeper structural issue: Nigeria is not effectively converting female education into labour market productivity, as reflected in persistent female unemployment.
-        </div>
-        <div class="project-tools">
-           <span class="tag">Econometric Modeling (EViews)</span><span class="tag">ARDL</span><span class="tag">Excel</span><span class="tag">Time Series Analysis</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/Gender-Inequality-in-Education-and-Economic-Development" target="_blank" class="project-link">View Repository</a>
-      </div>
 
-      <div class="project-card reveal">
-        <div class="project-title">BMW Car Sales Intelligence Dashboard</div>
-        <div class="project-desc">
-          Designed an interactive Power BI dashboard analyzing regional sales performance, product segmentation, revenue distribution,
-          and manufacturing trends.<br><br>
-          Built a structured data model using Power Query and DAX measures to generate KPI-driven insights for strategic comparison.<br><br>
-          Enabled performance benchmarking and data-driven sales optimization.
-        </div>
-        <div class="project-tools">
-          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/BMW-Car-Sales-Report" target="_blank" class="project-link">View Repository</a>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-title">Vehicle Crime Analytics — SQL Investigation</div>
-        <div class="project-desc">
-          Conducted an end-to-end SQL investigation on vehicle crime reports to identify frequency trends, geographic clustering,
-          case resolution patterns, and investigator workload distribution.<br><br>
-          Applied joins, CTEs, aggregations, and window functions to uncover operational bottlenecks and repeat-location crime clusters.<br><br>
-          Delivered structured insights that support targeted enforcement and reporting efficiency improvements.
-        </div>
-        <div class="project-tools">
-          <span class="tag">SQL</span><span class="tag">CTEs</span><span class="tag">Window Functions</span><span class="tag">SQLite</span><span class="tag">Investigation</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/Crime-Reports" target="_blank" class="project-link">View Repository</a>
-      </div>
-      
-      <!--<div class="project-card reveal">
-        <div class="project-title">Single Parenting &amp; Academic Performance</div>
-        <div class="project-desc">
-          This research project investigated the effect of single-parent family structures on the academic performance of 200 secondary school students in Oyo Town, Oyo State, Nigeria, using a descriptive survey design and stratified random sampling.<br><br>
-          The study combined descriptive statistics with an independent-samples t-test and Cohen's d effect size analysis to compare outcomes across family types.
-       </div>
-       <div class="project-tools">
-          <span class="tag">Excel</span><span class="tag">Survey Design</span><span class="tag">Stratified Random Sampling</span><span class="tag">Descriptive Statistics</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/The_Effect_of_Single_Parenting_on_the_academic_perfromance_of_students_in_oyo_town" target="_blank" class="project-link">View Repository</a>
-      </div> 
-
-      <div class="project-card reveal">
-        <div class="project-title">Assistive Technology &amp; Inclusive Education</div>
-        <div class="project-desc">
-          This project explores how assistive technology affects the learning and participation of students with physical disabilities in secondary schools in Oyo State. Using survey data from 150 respondents, the study reveals a harsh reality: assistive technology is largely unavailable in Nigerian schools, despite being widely recognized as effective.<br><br>
-          The research highlights systemic issues, including inadequate funding, insufficient teacher training, and infrastructural barriers, while also proposing practical solutions to advance inclusive education in Nigeria.
-       </div>
-       <div class="project-tools">
-          <span class="tag">Excel</span><span class="tag">Survey Design</span><span class="tag">Stratified Random Sampling</span><span class="tag">Descriptive Statistics</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/Assistive-Technology-and-Inclusive-Education-in-Nigeria" class="project-link">View Repository</a>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-title">Economic Education &amp; Unemployment</div>
-        <div class="project-desc">
-            This study examines how economics education combats unemployment in Nigeria between 1990 and 2024.<br><br>
-            Using ARDL modeling, it reveals that while tertiary attainment reduces unemployment, government expenditure is a far more potent driver of job creation. However, high inflation and theoretical curricula currently limit these returns.<br><br>
-            It recommends reaching UNESCO funding benchmarks and prioritizing practical entrepreneurship to bridge the graduate employment gap.
-        </div>
-        <div class="project-tools">
-            <span class="tag">Econometric Modeling (EViews)</span><span class="tag">Time Series Analysis</span><span class="tag">OLS</span><span class="tag">ARDL</span>
-        </div>
-        <a href="https://github.com/adegbolaayeni/Economics-Education-and-Unemployment-in-Nigeria" class="project-link">View Repository</a>
-      </div>
-
-      <br/>
-      <div class="more-projects">
-        <a href="https://github.com/adegbolaayeni?tab=repositories" target="_blank" class="btn-outline">
-          View Full Project Archive
-        </a>
-      </div>
-    </div>
-  </section>--> 
-
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-wrapper">
       <div class="section-label">Contact</div>
       <h2>Let's Connect</h2>
       <div class="divider"></div>
-
-      <p class="contact-intro reveal">
-        Open to data analyst roles, research collaborations, internships, and insight-driven projects across business, economics, and development sectors.
-        Passionate about transforming structured data into clear visualizations, meaningful insights, and evidence-based solutions.
-      </p>
-
+      <p class="contact-intro reveal">Open to data analyst roles, research collaborations, internships, and insight-driven projects across business, economics, and development sectors. Passionate about transforming structured data into clear visualizations, meaningful insights, and evidence-based solutions.</p>
       <div class="contact-links reveal">
+
         <a href="tel:+2348100642275" class="contact-item">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-text-label">Phone</span>
-            <span class="contact-text-value">+234 810 064 2275</span>
-          </div>
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div><span class="contact-text-label">Phone</span><span class="contact-text-value">+234 810 064 2275</span></div>
         </a>
-      
+
         <a href="https://github.com/adegbolaayeni" target="_blank" rel="noopener noreferrer" class="contact-item">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-text-label">GitHub</span>
-            <span class="contact-text-value">Adegbola Ayeni</span>
-          </div>
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+          <div><span class="contact-text-label">GitHub</span><span class="contact-text-value">Adegbola Ayeni</span></div>
         </a>
 
         <a href="mailto:ayeniadegbolaelijah@gmail.com" class="contact-item">
-          <div class="contact-icon" aria-hidden="true">✉</div>
-          <div>
-            <span class="contact-text-label">Email</span>
-            <span class="contact-text-value">ayeniadegbolaelijah@gmail.com</span>
-          </div>
+          <div class="contact-icon">✉</div>
+          <div><span class="contact-text-label">Email</span><span class="contact-text-value">ayeniadegbolaelijah@gmail.com</span></div>
         </a>
 
         <a href="https://drive.google.com/drive/folders/1X9lVZN-nc4yOmeT0jyp26H3zDdsvBln5?usp=sharing" rel="noopener noreferrer" class="contact-item">
-          <div class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 78" width="18" height="18" fill="currentColor">
-              <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="currentColor"/>
-              <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="currentColor"/>
-              <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="currentColor"/>
-              <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="currentColor"/>
-              <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="currentColor"/>
-              <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="currentColor"/>
-            </svg>
-          </div>
-          <div>
-            <span class="contact-text-label">Google Drive</span>
-            <span class="contact-text-value">Adegbola Ayeni</span>
-          </div>
-        </a> 
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 78" width="18" height="18" fill="currentColor"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z"/></svg></div>
+          <div><span class="contact-text-label">Google Drive</span><span class="contact-text-value">Adegbola Ayeni</span></div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-text" id="footerYear">© 2025 Adegbola Ayeni. All rights reserved.</div>
     <div class="footer-text">Economic Research &amp; Data Analyst</div>
@@ -954,18 +286,10 @@
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
+      entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80); });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-
-    window.addEventListener('scroll', () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
+    window.addEventListener('scroll', () => { document.body.classList.toggle('scrolled', window.scrollY > 50); });
     const fy = document.getElementById('footerYear');
     if (fy) fy.textContent = `© ${new Date().getFullYear()} Adegbola Ayeni. All rights reserved.`;
   </script>
