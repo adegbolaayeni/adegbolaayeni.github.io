@@ -483,7 +483,25 @@
       letter-spacing: 0.05em;
     }
 
-    /* PROJECTS */
+   /* PROJECTS */
+        /* PROJECTS */
+    #projects { background: var(--navy-mid); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+
+    .project-categories { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1100px; }
+
+    .category-card { background: var(--surface); border: 1px solid var(--border); padding: 3rem 2.5rem; text-decoration: none; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.3s, transform 0.3s, background 0.3s; position: relative; overflow: hidden; }
+    .category-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .category-card:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-5px); background: var(--surface-strong); }
+    .category-card:hover::after { transform: scaleX(1); }
+
+    .category-icon { font-size: 2.5rem; }
+    .category-count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; }
+    .category-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--white); line-height: 1.2; }
+    .category-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.75; }
+    .category-project-count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--slate); letter-spacing: 0.08em; }
+    .category-arrow { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; margin-top: auto; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+    .category-card:hover .category-arrow { gap: 0.9rem; }
+    .category-arrow::after { content: '→'; }
     #projects {
       background: var(--navy-mid);
       border-top: 1px solid rgba(0,0,0,0.06);
@@ -717,6 +735,7 @@
         <a href="https://github.com/adegbolaayeni/AdventureWorks-Sales-Intelligence-Dashboard" target="_blank" class="project-link">View Repository</a>
       </div>
       <div class="more-projects">
+        
         <a href="https://github.com/stars/adegbolaayeni/lists/visualization-projects" target="_blank" class="btn-outline">
           View Visualization Projects Archive
         </a>
